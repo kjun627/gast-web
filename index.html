@@ -30,11 +30,11 @@
 
 
 <section class="hero">
-  <div class="hero-body" style="padding-bottom: 1rem;">
+  <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Geometry-Aware Style Transfer in 3D Gaussian Splatting</h1>
+          <h1 class="title is-1 publication-title">Geometry-Aware Style Transfer in<br>3D Gaussian Splatting</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://oweixx.github.io/">Min Hyeok Bang</a><sup>1,*</sup>,</span>
@@ -62,14 +62,14 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- Paper Link. -->
+              <!-- arXiv Link. -->
               <span class="link-block">
                 <a href="https://arxiv.org/abs/2606.24144"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
+                      <i class="ai ai-arxiv"></i>
                   </span>
-                  <span>Paper</span>
+                  <span>arXiv</span>
                 </a>
               </span>
               <!-- Code Link. -->
@@ -97,10 +97,6 @@
         <source src="./static/videos/title.mp4"
                 type="video/mp4">
       </video>
-      <h2 class="subtitle has-text-centered">
-        <span class="dnerf">GAST</span> jointly transfers the appearance and the geometric
-        structure of a style image into a 3D Gaussian Splatting scene.
-      </h2>
     </div>
   </div>
 </section>
@@ -136,32 +132,54 @@
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Results</h2>
+        <h2 class="title is-3">Qualitative Results</h2>
         <div class="content has-text-justified">
           <p>
             GAST stylizes a reconstructed 3D Gaussian Splatting scene with a reference style while
-            preserving multi-view consistency. Below, the <i>Flower</i> scene is stylized with two
-            different styles and rendered along a novel camera path.
+            preserving multi-view consistency. Each result is rendered along a novel camera
+            trajectory. The <i>Flower</i> scene is shown across four styles, followed by additional
+            scenes.
           </p>
         </div>
       </div>
     </div>
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <div id="results-carousel" class="carousel results-carousel">
-          <div class="item item-flower-block">
-            <video autoplay muted loop playsinline height="100%">
-              <source src="./static/videos/flower_block.mp4" type="video/mp4">
-            </video>
-            <p class="has-text-centered">Flower &times; <i>Block</i> style</p>
-          </div>
-          <div class="item item-flower-wave">
-            <video autoplay muted loop playsinline height="100%">
-              <source src="./static/videos/flower_wave.mp4" type="video/mp4">
-            </video>
-            <p class="has-text-centered">Flower &times; <i>Wave</i> style</p>
-          </div>
-        </div>
+
+    <div class="result-grid columns is-multiline is-centered">
+      <div class="column is-half">
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/flower_block.mp4" type="video/mp4">
+        </video>
+        <p class="caption">Flower &mdash; Block</p>
+      </div>
+      <div class="column is-half">
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/flower_wave.mp4" type="video/mp4">
+        </video>
+        <p class="caption">Flower &mdash; Wave</p>
+      </div>
+      <div class="column is-half">
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/flower_hydrangea.mp4" type="video/mp4">
+        </video>
+        <p class="caption">Flower &mdash; Hydrangea</p>
+      </div>
+      <div class="column is-half">
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/flower_particle.mp4" type="video/mp4">
+        </video>
+        <p class="caption">Flower &mdash; Particle</p>
+      </div>
+      <div class="column is-half">
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/fern.mp4" type="video/mp4">
+        </video>
+        <p class="caption">Fern</p>
+      </div>
+      <div class="column is-half">
+        <video autoplay muted loop playsinline>
+          <source src="./static/videos/kitchen.mp4" type="video/mp4">
+        </video>
+        <p class="caption">Kitchen</p>
       </div>
     </div>
     <!--/ Results. -->

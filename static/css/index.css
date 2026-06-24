@@ -27,6 +27,24 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
+#teaser {
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.10);
+}
+
+.result-grid video {
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #e8e8e8;
+}
+
+.result-grid .caption {
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 0.95rem;
+}
+
 
 .publication-title {
 }
@@ -125,6 +143,9 @@ body {
 
 .results-carousel video {
   margin: 0;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 
