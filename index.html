@@ -133,47 +133,65 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Qualitative Results</h2>
-        <div class="content has-text-justified">
-          <p>
-            GAST stylizes a reconstructed 3D Gaussian Splatting scene with a reference style while
-            preserving multi-view consistency. Each result is rendered along a novel camera
-            trajectory. The <i>Flower</i> scene is shown across four styles, followed by additional
-            scenes.
-          </p>
+      </div>
+    </div>
+
+    <!-- Flower: two per view, arrows page through styles.
+         To add more results, just add another <div class="gast-slide"> ... </div> below. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="gast-carousel" data-per="2">
+          <button class="gast-arrow gast-prev" aria-label="Previous">&#10094;</button>
+          <div class="gast-viewport">
+            <div class="gast-track">
+              <div class="gast-slide">
+                <video autoplay muted loop playsinline>
+                  <source src="./static/videos/flower_block.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="gast-slide">
+                <video autoplay muted loop playsinline>
+                  <source src="./static/videos/flower_wave.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="gast-slide">
+                <video autoplay muted loop playsinline>
+                  <source src="./static/videos/flower_hydrangea.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="gast-slide">
+                <video autoplay muted loop playsinline>
+                  <source src="./static/videos/flower_particle.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <button class="gast-arrow gast-next" aria-label="Next">&#10095;</button>
         </div>
       </div>
     </div>
 
-    <div class="result-grid columns is-multiline is-centered">
-      <div class="column is-half">
-        <video autoplay muted loop playsinline>
-          <source src="./static/videos/flower_block.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="column is-half">
-        <video autoplay muted loop playsinline>
-          <source src="./static/videos/flower_wave.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="column is-half">
-        <video autoplay muted loop playsinline>
-          <source src="./static/videos/flower_hydrangea.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="column is-half">
-        <video autoplay muted loop playsinline>
-          <source src="./static/videos/flower_particle.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="column is-half">
-        <video autoplay muted loop playsinline>
-          <source src="./static/videos/fern.mp4" type="video/mp4">
-        </video>
-      </div>
-      <div class="column is-half">
-        <video autoplay muted loop playsinline>
-          <source src="./static/videos/kitchen.mp4" type="video/mp4">
-        </video>
+    <!-- Other scenes. Add more <div class="gast-slide"> ... </div> below. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="gast-carousel" data-per="2">
+          <button class="gast-arrow gast-prev" aria-label="Previous">&#10094;</button>
+          <div class="gast-viewport">
+            <div class="gast-track">
+              <div class="gast-slide">
+                <video autoplay muted loop playsinline>
+                  <source src="./static/videos/fern.mp4" type="video/mp4">
+                </video>
+              </div>
+              <div class="gast-slide">
+                <video autoplay muted loop playsinline>
+                  <source src="./static/videos/kitchen.mp4" type="video/mp4">
+                </video>
+              </div>
+            </div>
+          </div>
+          <button class="gast-arrow gast-next" aria-label="Next">&#10095;</button>
+        </div>
       </div>
     </div>
     <!--/ Results. -->
