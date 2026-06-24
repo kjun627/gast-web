@@ -22,6 +22,39 @@ function setupGastCarousel(car) {
     update();
 }
 
+// Start every result video at the same instant, once they have all buffered
+// enough to play, so their loops stay visually in phase.
+function syncPlayResultVideos() {
+    var videos = Array.prototype.slice.call(document.querySelectorAll('.gast-slide video'));
+    if (!videos.length) return;
+    var started = false;
+    var ready = 0;
+
+    function startAll() {
+        if (started) return;
+        started = true;
+        videos.forEach(function (v) {
+            try { v.currentTime = 0; } catch (e) { /* not seekable yet */ }
+            var p = v.play();
+            if (p && p.catch) { p.catch(function () {}); }
+        });
+    }
+    function onReady() { if (++ready >= videos.length) startAll(); }
+
+    videos.forEach(function (v) {
+        if (v.readyState >= 3) {
+            onReady();
+        } else {
+            var handler = function () { v.removeEventListener('canplay', handler); onReady(); };
+            v.addEventListener('canplay', handler);
+        }
+    });
+
+    // Fallback: don't wait forever if one video stalls.
+    setTimeout(startAll, 5000);
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.gast-carousel').forEach(setupGastCarousel);
+    syncPlayResultVideos();
 });
