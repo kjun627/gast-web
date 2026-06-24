@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Geometry-Aware Style Transfer in 3D Gaussian Splatting (GAST), ECCV 2026. A geometry-aware style transfer framework that jointly transfers appearance and geometric structure into 3D Gaussian Splatting scenes.">
+  <meta name="keywords" content="GAST, 3D Gaussian Splatting, 3DGS, Style Transfer, Geometry-Aware, ECCV 2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geometry-Aware Style Transfer in 3D Gaussian Splatting</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Geometry-Aware Style Transfer in 3D Gaussian Splatting</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://oweixx.github.io/">Min Hyeok Bang</a><sup>1,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://kjun627.github.io/">Jun Hyeong Kim</a><sup>1,*</sup>,</span>
+            <span class="author-block">
+              <a href="https://pknu-vlab.github.io/">Seung-Wook Kim</a><sup>2,&dagger;</sup>,</span>
+            <span class="author-block">
+              <a href="https://jbnu-vilab.github.io/">Se-Ho Lee</a><sup>1,&dagger;</sup></span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Jeonbuk National University,</span>
+            <span class="author-block"><sup>2</sup>Pukyong National University</span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution&nbsp;&nbsp;</span>
+            <span class="author-block"><sup>&dagger;</sup>Corresponding authors</span>
+          </div>
+
+          <div class="is-size-5 publication-authors" style="margin-top: 0.5rem;">
+            <span class="author-block"><b>ECCV 2026</b></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/oweixx/gast"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video id="teaser" autoplay muted loop playsinline height="100%">
+        <source src="./static/videos/title.mp4"
+                type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        <span class="dnerf">GAST</span> jointly transfers the appearance and the geometric
+        structure of a style image into a 3D Gaussian Splatting scene.
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this paper, we present a novel geometry-aware style transfer framework for 3D Gaussian
+            splatting (3DGS) that simultaneously transfers appearance attributes and geometric
+            structures. Unlike prior works that primarily focus on color-based stylization and often
+            overlook structural adaptation, our method explicitly incorporates geometry adaptation
+            through a decoupled optimization scheme that alternately updates color and geometry
+            parameters. This strategy alleviates potential interference between color and geometry
+            updates, leading to stable and consistent scene-level geometry transformation. The
+            decoupled optimization is enabled by the proposed geometry-aware contrastive feature
+            matching (GCFM). GCFM integrates RGB, depth, and edge cues into a contrastive objective
+            and is employed in both optimization phases to effectively transfer structural
+            characteristics from style images to Gaussian primitives. Extensive experiments show that
+            our approach achieves superior performance in both qualitative fidelity and quantitative
+            metrics, significantly outperforming existing 3DGS-based stylization methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            GAST stylizes a reconstructed 3D Gaussian Splatting scene with a reference style while
+            preserving multi-view consistency. Below, the <i>Flower</i> scene is stylized with two
+            different styles and rendered along a novel camera path.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content has-text-centered">
+          <video autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/flower_block.mp4" type="video/mp4">
+          </video>
+          <p>Flower &times; <i>Block</i> style</p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="content has-text-centered">
+          <video autoplay controls muted loop playsinline width="100%">
+            <source src="./static/videos/flower_wave.mp4" type="video/mp4">
+          </video>
+          <p>Flower &times; <i>Wave</i> style</p>
+        </div>
+      </div>
+    </div>
+    <!--/ Results. -->
+
+    <!-- TODO: Method figure and quantitative tables go here once assets are provided. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{bang2026gast,
+  author    = {Bang, Min Hyeok and Kim, Jun Hyeong and Kim, Seung-Wook and Lee, Se-Ho},
+  title     = {Geometry-Aware Style Transfer in 3D Gaussian Splatting},
+  booktitle = {European Conference on Computer Vision (ECCV)},
+  year      = {2026},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link" href="https://github.com/oweixx/gast" class="external-link">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            This page was built using the <a
+              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> website template.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
