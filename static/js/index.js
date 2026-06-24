@@ -9,15 +9,15 @@ function setupGastCarousel(car) {
     var count = track.children.length;
     var page = 0;
     var maxPage = Math.max(0, Math.ceil(count / per) - 1);
+    var pages = maxPage + 1;
 
     function update() {
         track.style.transform = 'translateX(' + (-page * viewport.clientWidth) + 'px)';
-        prev.disabled = page <= 0;
-        next.disabled = page >= maxPage;
         car.classList.toggle('is-single-page', maxPage === 0);
     }
-    prev.addEventListener('click', function () { if (page > 0) { page--; update(); } });
-    next.addEventListener('click', function () { if (page < maxPage) { page++; update(); } });
+    // Wrap around so the arrows never dead-end (infinite loop).
+    prev.addEventListener('click', function () { page = (page - 1 + pages) % pages; update(); });
+    next.addEventListener('click', function () { page = (page + 1) % pages; update(); });
     window.addEventListener('resize', update);
     update();
 }
