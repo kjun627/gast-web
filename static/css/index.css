@@ -23,6 +23,13 @@ body {
   padding-bottom: 3rem;
 }
 
+/* .hero is a column flexbox; Bulma's `margin: 0 auto` on .container cancels the
+   stretch, so the container shrink-to-fits. The old <video> supplied an intrinsic
+   width; the percentage-sized embed box does not, so pin it to full width. */
+.teaser .container {
+  width: 100%;
+}
+
 .teaser {
   font-family: 'Google Sans', sans-serif;
 }
